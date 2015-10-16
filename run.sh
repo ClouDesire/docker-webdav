@@ -2,7 +2,7 @@
 
 sed -i "s/Listen 80/Listen $APACHE_PORT/" /etc/apache2/ports.conf
 mkdir -p /srv/webdav
-chown www-data /srv/webdav
+chown $APACHE_UID /srv/webdav
 
 _term() {
   echo "Caught SIGTERM signal!"
